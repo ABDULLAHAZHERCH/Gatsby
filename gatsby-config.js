@@ -34,6 +34,7 @@ module.exports = {
     description: "A simple site built with Gatsby",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

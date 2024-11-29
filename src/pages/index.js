@@ -1,34 +1,24 @@
-// import React from "react"
-// import { graphql } from "gatsby"
-
-// const HomePage = ({ data }) => (
-//   <main>
-//     <h1>{data.site.siteMetadata.title}</h1>
-//     <p>{data.site.siteMetadata.description}</p>
-//   </main>
-// )
-// export const query = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//         description
-//       }
-//     }
-//   }
-// `
-// export default HomePage
 import React from "react"
-import { Helmet } from "react-helmet"
+import { graphql } from "gatsby"
+import SEO from "../components/seo"
 
-const SEO = () => (
-  <Helmet>
-    <title>My Gatsby Site</title>
-    <meta
-      name="description"
-      content="This is a Gatsby site optimized for SEO"
-    />
-  </Helmet>
+const HomePage = ({ data }) => (
+  <>
+    <SEO />
+    <main>
+      <h1>{data.site.siteMetadata.title}</h1>
+      <p>{data.site.siteMetadata.description}</p>
+    </main>
+  </>
 )
-
-export default SEO
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`
+export default HomePage
